@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnSendSMS;
     TextView tvSMSCharCount;
 
-    List<String> numberList = new ArrayList<>(Arrays.asList("01520103480","01520103480","01520103480","01520103480","01520103480"));
+    ArrayList<String> numberList = new ArrayList<>(Arrays.asList("01520103480","01520103480","01520103480","01520103480","01520103480"));
     private String message="";
 
     @Override
@@ -283,7 +284,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }else {
 
-            startSMSSending();
+            //startSMSSending();
+            startService();
         }
 
     }
@@ -296,7 +298,8 @@ public class MainActivity extends AppCompatActivity {
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     Log.d("log","This is log");
 
-                    startSMSSending();
+                    //startSMSSending();
+                    startService();
 
                 } else {
                     Toast.makeText(getApplicationContext(),
@@ -330,5 +333,12 @@ public class MainActivity extends AppCompatActivity {
             Thread.sleep(2500);
         } catch (InterruptedException e) {
         }
+    }
+
+    public void startService() {
+        Intent serviceIntent = new Intent(this, SMSService.class);
+        serviceIntent.putExtra("msg", message);
+        serviceIntent.putStringArrayListExtra("list", numberList);
+        ContextCompat.startForegroundService(this, serviceIntent);
     }
 }
