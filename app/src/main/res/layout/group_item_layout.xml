@@ -4,31 +4,47 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/titleTV"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:text="Select Group"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:gravity="center"/>
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#EAEAEA"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/lvGroupList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/titleTV"
-        android:layout_margin="8dp"
-        style="@style/dividedListStyle"/>
-    <Button
-        android:id="@+id/btnCancelDialog"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:text="CANCEL"
-        android:layout_below="@+id/lvGroupList"/>
+            <TextView
+                android:id="@+id/titleTV"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="Select Group"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EAEAEA"/>
+
+            <ListView
+                android:id="@+id/lvGroupList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_below="@+id/titleTV"
+                android:layout_margin="8dp"
+                style="@style/dividedListStyle"/>
+            <Button
+                android:id="@+id/btnCancelDialog"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="CANCEL"
+                android:layout_below="@+id/lvGroupList"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

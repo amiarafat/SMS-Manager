@@ -14,10 +14,12 @@
         android:layout_margin="12dp">
 
         <Button
+            android:id="@+id/btnShowLog"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_margin="4dp"
-            android:text="Select SMS"
+            android:text="Show SMS LOG"
+            android:textStyle="bold"
             android:textColor="@android:color/black"
             android:background="@drawable/edit_text_bg"/>
 
@@ -27,7 +29,6 @@
             android:layout_height="160dp"
             android:layout_marginTop="12dp"
             android:hint="SMS Text"
-            android:text="I Love You"
             android:gravity="center_horizontal"
             android:padding="8dp"
             android:background="@drawable/edit_text_bg"/>

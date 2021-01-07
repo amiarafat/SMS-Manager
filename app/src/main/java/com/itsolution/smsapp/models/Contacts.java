@@ -4,7 +4,7 @@ public class Contacts {
 
     int id;
     String name;
-    int mobileNumber;
+    String mobileNumber;
 
     public int getId() {
         return id;
@@ -14,11 +14,11 @@ public class Contacts {
         this.id = id;
     }
 
-    public int getMobileNumber() {
+    public String getMobileNumber() {
         return mobileNumber;
     }
 
-    public void setMobileNumber(int mobileNumber) {
+    public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 
